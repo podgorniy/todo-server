@@ -1,0 +1,14 @@
+{
+	"title": "Второй TODO список",
+	"created": "Fri, 21 Feb 2014 16:22:58 GMT",
+	"tasks": [{
+		"description": "Подключить jQuery",
+		"done": true
+	}, {
+		"description": "Прочитать про jQuery deferred",
+		"done": false
+	}, {
+		"description": "Написать подтягивание задач с помощью jQuery deferred",
+		"done": false
+	}]
+}

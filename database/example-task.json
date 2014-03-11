@@ -1,0 +1,17 @@
+{
+	"title": "Пример TODO списка",
+	"created": "Tue, 18 Feb 2014 02:16:35 GMT",
+	"tasks": [{
+		"description": "Установить nodejs",
+		"done": true
+	}, {
+		"description": "Научиться программировать",
+		"done": false
+	}, {
+		"description": "Написать программу",
+		"done": false
+	}, {
+		"description": "Понять как надо было написать программу",
+		"done": false
+	}]
+}

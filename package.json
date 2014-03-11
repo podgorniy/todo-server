@@ -1,0 +1,8 @@
+{
+	"name": "todo-crud-server",
+	"description": "Todo CRUD server",
+	"version": "0.0.1",
+	"dependencies": {
+		"express": "3.4.*"
+	}
+}

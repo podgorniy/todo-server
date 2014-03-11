@@ -1,0 +1,8 @@
+.DS_Store
+*.sublime-*
+.jshintrc
+node_modules
+database/*
+
+!database/example-task.json
+!database/another-task.json
