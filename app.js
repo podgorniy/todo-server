@@ -46,14 +46,15 @@ function writeJSON (path, data, cb) {
 /**
  * Middleware
  */
-app.use(express.json())
-app.use(express.urlencoded())
-app.use(express.static('static'))
 
 // Emulate server response delay
 app.use(function (req, res, next) {
 	setTimeout(next, BASE_DELAY + Math.random() * DELAY_SPREAD)
 })
+
+app.use(express.json())
+app.use(express.urlencoded())
+app.use(express.static('static'))
 
 /**
  * Routing
