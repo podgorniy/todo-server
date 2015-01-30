@@ -8,8 +8,8 @@ var app = express()
  * Static
  */
 
-const PORT = 9004
-const DATA_DIR = path.join(__dirname, 'database')
+const PORT = process.env.PORT || 5000
+const DATA_DIR = path.join(__dirname, 'data')
 const BASE_DELAY = 500
 const DELAY_SPREAD = 1000
 
@@ -61,7 +61,7 @@ app.use(express.static('static'))
  */
 
 // List of all todo lists
-app.get('/todos/', function (req, res) {
+app.get('/todos', function (req, res) {
 	fs.readdir(DATA_DIR, function (err, data) {
 		if (err) {
 			res.status(500)
@@ -245,5 +245,5 @@ app.delete('/todos/:listName', function (req, res) {
 	})
 })
 
-app.listen(process.env.PORT || PORT)
+app.listen(PORT)
 console.log('App started at', PORT)

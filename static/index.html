@@ -4,13 +4,14 @@
 	<meta charset="UTF-8">
 	<title>Todo application</title>
 	<script src="js/lib/jquery-1.11.0.min.js"></script>
+	<script src="js/lib/script.js"></script>
 </head>
 <body>
 	<h1>Главный файл приложения</h1>
 	<p>Доступное <a href="https://github.com/podgorniy/todo-server#api">API</a> описано в README репозитория</p>
 	<p>Попробуй из командной строки:</p>
 	<h4>Список всех todo списков</h4>
-	<pre><code>$.get('/todos/', function (response) {
+	<pre><code>$.get('/todos', function (response) {
     console.log(response)
 })</code></pre>
 
