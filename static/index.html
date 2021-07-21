@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Todo application</title>
+	<script src="js/lib/jquery-1.11.0.min.js"></script>
+	<script src="js/lib/script.js"></script>
+</head>
+<body>
+	<h1>Главный файл приложения</h1>
+	<p>Доступное <a href="https://github.com/podgorniy/todo-server#api">API</a> описано в README репозитория</p>
+	<p>Попробуй из командной строки:</p>
+	<h4>Список всех todo списков</h4>
+	<pre><code>$.get('/todos', function (response) {
+    console.log(response)
+})</code></pre>
+
+	<h4>Данные по определенному списку</h4>
+	<p>Формат данных можно менять как угодно на свое усмотрение, не обязательно придерживаться демонстрационного формата</p>
+	<pre><code>$.get('/todos/another-task', function (response) {
+    console.log(response)
+})</code></pre>
+
+	<h4>Создать новый todo список с названием "foo"</h4>
+	<pre><code>$.post('/todos/foo', {
+    todo: JSON.stringify({
+        title: "Foo todo list",
+        created: new Date().toString(),
+        tasks: []
+    })
+})</code></pre>
+
+	<h4>Добавить новую задачу в todo список "foo" (сработает только если тот уже создан)</h4>
+	<pre><code>$.getJSON('/todos/foo').then(function(fooTodoList) {
+	fooTodoList.tasks.push({
+		description: 'Add new task',
+		done: false
+	})
+	return fooTodoList
+}).then(function(fooTodoList) {
+	return $.ajax({
+		url: '/todos/foo',
+		method: 'PUT',
+		data: {
+			todo: JSON.stringify(fooTodoList)
+		}
+	})
+})</code></pre>
+</body>
+</html>
